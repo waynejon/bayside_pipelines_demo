@@ -27,7 +27,7 @@ events:
         post-build:
           type: script
           script:
-            - 'if [ -e "docroot/sites/default/settings.php" ]; then chmod u+w docroot/sites/default/settings.php; fi'
+            - 'chmod u+w docroot/sites/default/settings.php'
             - 'if [ -e "scripts/settings.php" ]; then cp scripts/settings.php docroot/sites/default/settings.php; else cp docroot/sites/default/default.settings.php docroot/sites/default/settings.php; fi' 
 variables:
   global:
