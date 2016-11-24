@@ -13,11 +13,16 @@ events:
           script:
             - './assemble.sh'
       -
+        build:
+          type: script
+          script:
+            - 'composer install --prefer-dist'
+      -
         acsf:
           type: script
           script:
-            - cd docroot
-            - drush --include=modules/contrib/acsf/acsf_init acsf-init
+            - 'cd docroot'
+            - '../bin/drush --include=modules/contrib/acsf/acsf_init acsf-init'
       -
         compile:
           type: script
